@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 // Função para calcular b1 (inclinação)
 double calcular_b1(int n, double x[], double y[], double sumX, double sumY, double sumXY, double sumX2) {
@@ -51,7 +52,8 @@ int main() {
     printf("Digite o número de pontos (n): ");
     scanf("%d", &n);
 
-    double x[n], y[n];
+    double* x = (double*)malloc(n * sizeof(double));
+    double* y = (double*)malloc(n * sizeof(double));
     double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
 
     // Entrada dos dados
